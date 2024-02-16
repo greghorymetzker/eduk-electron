@@ -45,12 +45,9 @@ modules:
     subdir: main
     sources:
       # Getting project
-      # - type: git
-      #   url: https://github.com/greghorygusmao/br.com.eduk.app.git
-      #   commit: 680ca0c022acd6ee481ece5181823740c9af5f62
-      - type: dir
-        path: ..
-        dest: main
+      - type: git
+        url: https://github.com/greghorygusmao/br.com.eduk.app.git
+        commit: 58d97c2a9a35862024a516f3673e715cd11dc86b
       - type: file
         path: br.com.eduk.desktop
       - type: file
