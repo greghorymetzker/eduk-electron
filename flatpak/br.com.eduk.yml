@@ -40,14 +40,17 @@ modules:
       # Install app wrapper
       - install -Dm755 -t /app/bin/ ../run.sh
       - install -Dm444 logo.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - install -Dm444 ./flatpak/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm444 ./flatpak/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - install -Dm444 flatpak/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm444 flatpak/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     subdir: main
     sources:
       # Getting project
-      - type: git
-        url: https://github.com/greghorygusmao/br.com.eduk.app.git
-        commit: 58d97c2a9a35862024a516f3673e715cd11dc86b
+      - type: dir
+        path: ..
+        dest: main
+      # - type: git
+      #   url: https://github.com/greghorygusmao/br.com.eduk.app.git
+      #   commit: 58d97c2a9a35862024a516f3673e715cd11dc86b
       - type: file
         path: br.com.eduk.desktop
       - type: file
